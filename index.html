@@ -11,8 +11,7 @@
 </head>
 
 <body>	
-	<section
-	class="header">
+
 	<div class="header">
 		<div class="sub_header">
 			<div class="logo">
@@ -52,25 +51,22 @@
 			</div>
 		</div>
 	</div>
-	
-</section>
-		
-		
 		<!-- mobile menu --------------------------------------------- -->
-		<div class="dropMenu">
-			<ul>
-				<li><a href="##">Catalog » </a></li>
-				<li><a href="##">Products » </a></li>
-				<li><a href="##">Career paths » </a></li>
-				<li><a href="##">Resources » </a></li>
-				<li><a href="##">For Business » </a></li>
-				<div class="mob1">
-				<button class="btn" >login</button>
-				</div>
-				<button class="btn1" >Get started</button>	
-			</ul>
-			<div class="Close">X</div>
+<div class="dropMenu">
+	<ul>
+		<li><a href="##">Catalog » </a></li>
+		<li><a href="##">Products » </a></li>
+		<li><a href="##">Career paths » </a></li>
+		<li><a href="##">Resources » </a></li>
+		<li><a href="##">For Business » </a></li>
+		<div class="mob1">
+		<button class="btn" >login</button>
 		</div>
+		<button class="btn1" >Get started</button>	
+	</ul>
+	<div class="Close">X</div>
+</div>
+
 <div class="grandparent">
 <div class="parent1"> </div>
 	<div class="parent2">
@@ -184,40 +180,75 @@
 
 </div>
 
-<!-- script files link here -->
-<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
 <script>
-	// Animation------------------------------------
-	AOS.init({
-		duration: 900,
-		offset: 220,
-		easing: 'ease-in-out-quad'
-	});
-	
-  //-----scroll-----------------
-  const ham = document.querySelector('.Ham');
-  const Close=document.querySelector(".Close");
-  const DropMenu =document.querySelector('.dropMenu')
-	window.addEventListener('scroll', () => {
-    const top = window.innerHeight * (15 / 100);
-    if (window.scrollY <= top) {
-        header.style.background = 'rgb(26, 25, 29)';
-        ham.style.background ="transparent";
-
-        header.style.height = '60px';
-        navLink.forEach((i) => {
-            i.style.color = '#fff';
-        });
-    }
-    if (window.scrollY > top) {
-        header.style.background = '#fff';
-        ham.style.background ="#0a33ec";
-        header.style.height = '55px';
-        navLink.forEach((i) => {
-            i.style.color = '#000';
-        });
-    }
-});
+new Splide( '.splide', {
+	type   : 'loop',
+	autoplay: true,
+	pagination : false,
+	arrows     : false,
+	perPage    : 2,
+	perMove    : 1,
+	focus  : 'center',
+	autoplay: true,
+	gap    : '1rem',
+	breakpoints : {
+		'600': {
+	perPage : 1,
+	gap    : '1rem'
+		}
+	},
+} ).mount();
 </script>
+	<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+	<script>
+		AOS.init({
+			duration: 900,
+			offset: 220,
+			easing: 'ease-in-out-quad',
+		});
+
+		const header = document.querySelector('.header');
+		const navLink = document.querySelectorAll('.nav_item');
+		const ham = document.querySelector('.ham');
+		
+		window.addEventListener('scroll', () => {
+			const top = window.innerHeight * (15 / 100);
+			if (window.scrollY <= top) {
+				header.style.background = 'rgb(26, 25, 29)';
+				ham.style.background ="transparent";
+
+				header.style.height = '60px';
+				navLink.forEach((i) => {
+					i.style.color = '#fff';
+				});
+			}
+			if (window.scrollY > top) {
+				header.style.background = '#black';
+				ham.style.background ="#black";
+				header.style.height = '55px';
+				navLink.forEach((i) => {
+					i.style.color = '#000';
+				});
+			}
+		});
+
+	</script>
+	<script>
+			//----------------------------
+
+		  const Close=document.querySelector(".Close");
+		    const DropMenu =document.querySelector('.dropMenu')
+		  ham.addEventListener('click',() => {
+			DropMenu.classList.add("MenuAnimation")
+			console.log('sdsd');
+
+		})
+		Close.addEventListener('click',() => {
+			DropMenu.classList.remove('MenuAnimation')
+
+		})
+	//-------
+	</script>
 </body>
 </html>
