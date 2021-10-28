@@ -221,23 +221,25 @@
   const Close=document.querySelector(".Close");
   const DropMenu =document.querySelector('.dropMenu')
 	window.addEventListener('scroll', () => {
-const top = window.innerHeight * (10 / 100)+300;
-if (window.scrollY <= top) {
-	document.querySelector(".Scroll").style.display='none';
+    const top = window.innerHeight * (15 / 100);
+    if (window.scrollY <= top) {
+        header.style.background = 'rgb(26, 25, 29)';
+        ham.style.background ="transparent";
 
-}
-if (window.scrollY > top) {
-		document.querySelector(".Scroll").style.display='grid';
-}
+        header.style.height = '60px';
+        navLink.forEach((i) => {
+            i.style.color = '#fff';
+        });
+    }
+    if (window.scrollY > top) {
+        header.style.background = '#fff';
+        ham.style.background ="#0a33ec";
+        header.style.height = '55px';
+        navLink.forEach((i) => {
+            i.style.color = '#000';
+        });
+    }
 });
-ham.addEventListener('click',() => {
-	DropMenu.classList.add("MenuAnimation")
-
-})
-Close.addEventListener('click',() => {
-	DropMenu.classList.remove('MenuAnimation')
-
-})
 </script>
 </body>
 </html>
