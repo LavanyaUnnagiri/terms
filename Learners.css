@@ -589,7 +589,7 @@ body {
 }
 @media (max-width: 750px) {
 	.Footer_conatiner {
-		padding: 5px;
+		padding: 15px;
 	}
 	.Footer_conatiner .Footer_columns_holder {
 		width: 95%;
@@ -701,7 +701,6 @@ h2 {
 }
 
 h1 {
-    display: block;
     font-size: 2em;
     font-weight: bold;
 	padding-bottom: 30px;
