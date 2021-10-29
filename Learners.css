@@ -6,6 +6,15 @@
 	font-family: 'Montserrat', sans-serif;
 	
 }
+
+html {
+	scroll-behavior: smooth;
+}
+@media screen and (prefers-reduced-motion: no-preference) {
+	html {
+		scroll-behavior: smooth;
+	}
+}
 body {
 	display: flex;
 	align-items: center;
@@ -691,7 +700,7 @@ body {
     line-height: 1.5;
 }
 
-h2 {
+.h2top{
     font-size: 22px;
     text-align: left;
     border: none;
@@ -700,8 +709,29 @@ h2 {
     color: rgb(255, 0, 200);
 }
 
-h1 {
+.h1top{
     font-size: 2em;
     font-weight: bold;
 	padding-bottom: 30px;
+}
+
+.Scroll {
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	background-color: rgb(236, 69, 208);
+	display: grid;
+	place-items: center;
+	transition: all 0.5s ease;
+	position: fixed;
+	bottom: 15px;
+	right: 10px;
+	z-index: 6;
+	display: none;
+}
+.Scroll:hover {
+	transform: scale(1.1);
+}
+.Scroll a {
+	text-decoration: none;
 }
